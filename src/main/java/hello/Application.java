@@ -38,20 +38,13 @@ public class Application {
                         .withFixedDelay(40000))); // take longer than our expected timeout for Manual's server
                         // http://esbtest.mtdproducts.com:5656/ws/MTDManualsWS.ProvWSD:getManualsWSD
 
-
-        //wireMockServer.stubFor(get(urlEqualTo("/timeout-tester")));
-
         //wireMockServer.stop();
-
-       /* ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.*/
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         //driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(1, TimeUnit.MILLISECONDS);
 
-        //driver.get("http://esbtest.mtdproducts.com:5656/ws/MTDManualsWS.ProvWSD:getManualsWSD?storeId=10051&catalogId=14101&langId=-1&logoCode=01&modelNumber=13WX90AS010&serialNumber=");
         try {
             driver.get("http://local.cubcadet.com/equipment/cubcadet/DisplayOwnersManualList?storeId=10051&catalogId=14101&langId=-1&logoCode=01&modelNumber=13WX90AS010&serialNumber=");
         } catch (Exception e) {
